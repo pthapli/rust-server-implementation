@@ -13,7 +13,9 @@ fn main() {
 
         println!("Connection established");
 
-        handle_connection(stream);
+        thread::spawn(|| {
+            handle_connection(stream);
+        });
     }
 }
 
